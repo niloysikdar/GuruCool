@@ -87,3 +87,5 @@ exports.getCurrentUser = async (req, res) => {
   logger(200, 'User found', user, JSON.stringify(req.user.userId));
   res.json({ userId: user._id, user: user });
 };
+
+

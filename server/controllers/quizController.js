@@ -36,6 +36,13 @@ exports.getQuiz = async (req, res) => {
 exports.getAllQuiz = async (req, res) => {
   try {
     const quizzes = await Quiz.find({ classroom: req.query.id });
+    quizzes.forEach(quiz => {
+      quiz.qnas.forEach(qna => {
+        qna.options.forEach(option => {
+          option.isCorrect = false;
+        });
+      });
+    });
     res.status(200).send(respMessage(true, { quizzes }, 'Quizzes fetched successfully'));
   } catch (error) {
     res.status(400).send(respMessage(false, {}, error.message));
