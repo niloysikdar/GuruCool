@@ -28,7 +28,19 @@ const UserSchema = new Schema({
   },
   rollNo: {
     type: String,
-    default: 0,
+    default: 0
+  },
+  classrooms: {
+    type: Array,
+    default: []
+  },
+  level: {
+    type: Number,
+    default: 0
+  },
+  points: {
+    type: Number,
+    default: 0
   },
 });
 
