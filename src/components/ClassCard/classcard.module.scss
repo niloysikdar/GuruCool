@@ -37,14 +37,29 @@
   button {
     margin: 25px 0 10px 0;
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     font-size: 1.1rem;
     font-weight: 600;
-    background-color: $buttonbackground;
+    // background-color: $buttonbackground;
+    background-image: linear-gradient(
+      to right,
+      #02a1a7 0%,
+      #00cdac 51%,
+      $buttonbackground 100%
+    );
     color: #fff;
     border: none;
     outline: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }

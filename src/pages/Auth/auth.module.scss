@@ -3,10 +3,20 @@
 
 .main {
   min-height: 100vh;
-  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   .box {
     height: 80vh;
@@ -39,7 +49,7 @@
     }
 
     .form {
-      width: 330px;
+      width: 360px;
       height: 80%;
       padding: 40px 30px;
       display: flex;
@@ -77,12 +87,27 @@
           padding: 9px 20px;
           outline: none;
           border: none;
-          border-radius: $borderRadius;
-          background-color: $buttonbackground;
+          border-radius: 5px;
+          // background-color: $buttonbackground;
+          background-image: linear-gradient(
+            to right,
+            #02a1a7 0%,
+            #00cdac 51%,
+            $buttonbackground 100%
+          );
           color: #fff;
           cursor: pointer;
           font-size: 1.1rem;
-          font-weight: 500;
+          font-weight: 600;
+          transition: 0.5s;
+          background-size: 200% auto;
+          box-shadow: 0 0 20px #eee;
+
+          &:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
         }
       }
     }
