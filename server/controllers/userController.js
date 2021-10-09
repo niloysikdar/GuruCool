@@ -83,7 +83,7 @@ exports.loginUser = async (req, res) => {
 };
 
 exports.getCurrentUser = async (req, res) => {
-  const user = await User.findById(req.body.userId);
-  logger(200, 'User found', user, JSON.stringify(req.body.userId));
+  const user = await User.findById(req.user.userId);
+  logger(200, 'User found', user, JSON.stringify(req.user.userId));
   res.json({ userId: user._id, user: user });
 };
