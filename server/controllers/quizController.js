@@ -34,9 +34,46 @@ exports.getQuiz = async (req, res) => {
 
 exports.getAllQuiz = async (req, res) => {
   try {
-    const quizzes = await Quiz.find({ classroom: req.params.id });
+    const quizzes = await Quiz.find({ classroom: req.query.id });
     res.status(200).send(respMessage(true, { quizzes }, 'Quizzes fetched successfully'));
   } catch (error) {
+    res.status(400).send(respMessage(false, {}, error.message));
+  }
+}
+
+exports.submitQuiz = async (req, res) => {
+  try {
+    const quiz = await Quiz.findById(req.query.id);
+    const user = await User.findById(req.user.userId);
+    if (user.role === 'Student') {
+      const answers = req.body.answers;
+      let score = 0;
+      for (var i = 0; i < quiz.qnas.length; i++) {
+        var qna = quiz.qnas[i];
+        for (var j = 0; j < qna.options.length; j++) {
+          var option = qna.options[j];
+          if (option.isCorrect && answers[i] === j) {
+            score++;
+          }
+        }
+      }
+      const totalScore = quiz.qnas.length;
+      const result = {
+        score,
+        totalScore,
+        percentage: (score / totalScore) * 100,
+        submittedBy: user._id,
+        submittedOn: Date.now()
+      }
+      var level = Math.floor((user.points + score) / 100);
+      await User.findByIdAndUpdate(user._id, { points: (user.points + score), level: level });
+      await Quiz.findByIdAndUpdate(req.query.id, { $push: { submissions: result } });
+      res.status(200).send(respMessage(true, { result }, 'Quiz submitted successfully'));
+    } else {
+      res.status(403).send(respMessage(false, {}, 'Only students can submit quiz'));
+    }
+  }
+  catch (error) {
     res.status(400).send(respMessage(false, {}, error.message));
   }
 }
