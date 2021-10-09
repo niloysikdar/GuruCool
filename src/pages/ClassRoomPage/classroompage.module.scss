@@ -1,0 +1,73 @@
+@import '../../ui/colors';
+
+.classroompage {
+  padding: 5rem;
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+
+  button {
+    margin-top: 1.2rem;
+    padding: 7px 25px;
+    outline: none;
+    border: none;
+    // background-color: $buttonbackground;
+    background-image: linear-gradient(
+      to right,
+      #02a1a7 0%,
+      #00cdac 51%,
+      $buttonbackground 100%
+    );
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .leaderboard {
+    margin-top: 2rem;
+    width: 100%;
+
+    h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
