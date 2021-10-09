@@ -1,14 +1,22 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { getAllClasses } from '../../actions/class';
 import { useModal } from '../../hooks/useModal';
 import { ClassCard } from '../../components/ClassCard';
 import { AddClass } from '../../components/AddClass';
 import styles from './dashboard.module.scss';
 
 const Dashboard = () => {
+  const dispatch = useDispatch();
+
   const NAME = JSON.parse(localStorage.getItem('userdata')).user.fullname;
   const ROLE = JSON.parse(localStorage.getItem('userdata')).user.role;
   const { isModalOpen, open, close } = useModal();
+
+  useEffect(() => {
+    dispatch(getAllClasses());
+  }, [dispatch]);
 
   const allClasses = useSelector((state) => state.classReducer);
 
