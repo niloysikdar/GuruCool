@@ -89,11 +89,11 @@ exports.getAllClassrooms = async (req, res) => {
       });
     } else {
       var classrooms = [];
-      user.classrooms.forEach(async (classroom) => {
-        const classroomData = await Classroom.findById(classroom);
+      for(let i = 0; i < user.classrooms.length; i++){
+        const classroomData = await Classroom.findById(user.classrooms[i]);
         const createdBy = await User.findById(classroomData.createdBy);
         classrooms.push({ ...classroomData._doc, fullname: createdBy.fullname });
-      });
+      }
       return res.status(200).send(respMessage(true, { classrooms }, null));
     }
   } catch (err) {
