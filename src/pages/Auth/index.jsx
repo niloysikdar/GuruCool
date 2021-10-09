@@ -4,6 +4,8 @@ import { LoginForm } from '../../components/LoginForm';
 import { SignUpForm } from '../../components/SignUpForm';
 import styles from './auth.module.scss';
 
+import image from '../../assets/intro.svg';
+
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [loginData, setLoginData] = useState({ email: '', password: '' });
@@ -31,7 +33,10 @@ const Auth = () => {
   return (
     <div className={styles.main}>
       <div className={styles.box}>
-        <div className={styles.imagewrapper}></div>
+        <div className={styles.imagewrapper}>
+          <h2>GuruCool</h2>
+          <img src={image} alt='Banner' />
+        </div>
         <div className={styles.form}>
           <div className={styles.loginselector}>
             <button
