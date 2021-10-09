@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const userRouter = require("./routers/userRouter");
+const classroomRouter = require("./routers/classroomRouter");
 require('dotenv').config()
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(cors());
 // parse requests of content-type - application/json
 app.use(express.json());
 app.use('/auth', userRouter);
+app.use('/classroom', classroomRouter);
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "HackX api." });

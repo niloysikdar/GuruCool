@@ -7,3 +7,7 @@ Sat Oct 09 2021 17:10:05 GMT+0530 (India Standard Time):
 Status Code 200, User logged in, DataID: 61617cab2200a5ff1031519c, By User: undefined
 Sat Oct 09 2021 17:14:18 GMT+0530 (India Standard Time):
 Status Code 200, User found, DataID: 61617cab2200a5ff1031519c, By User: {"userId":"61617cab2200a5ff1031519c","iat":1633779605,"exp":1633866005}
+Sat Oct 09 2021 20:20:05 GMT+0530 (India Standard Time):
+Status Code 400, User not found, DataID: undefined, By User: undefined
+Sat Oct 09 2021 20:20:25 GMT+0530 (India Standard Time):
+Status Code 400, User not found, DataID: undefined, By User: undefined

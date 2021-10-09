@@ -29,7 +29,19 @@ const UserSchema = new Schema({
   roleNo: {
     type: String,
     default: 0
-  }
+  },
+  classrooms: {
+    type: Array,
+    default: []
+  },
+  level: {
+    type: Number,
+    default: 0
+  },
+  points: {
+    type: Number,
+    default: 0
+  },
 });
 
 module.exports = mongoose.model('User', UserSchema);
