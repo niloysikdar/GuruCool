@@ -16,7 +16,7 @@ const QuizSchema = new Schema({
   },
   submissions: {
     type: Array,
-    required: true
+    default: []
   },
   createdAt: {
     type: Date,

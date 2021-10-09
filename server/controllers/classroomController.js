@@ -72,7 +72,7 @@ exports.getAllClassrooms = async (req, res) => {
       user.classrooms.forEach(async (classroom) => {
         const classroomData = await Classroom.findById(classroom);
         const createdBy = await User.findById(classroomData.createdBy);
-        classrooms.push({ ...classroomData._doc, createdBy: createdBy.fullname });
+        classrooms.push({ ...classroomData._doc, fullname: createdBy.fullname });
       });
       return res.status(200).send(respMessage(true, { classrooms }, null));
     }
