@@ -1,13 +1,15 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
 import { Navbar } from './components/Navbar';
 import { Auth } from './pages/Auth';
 import { Dashboard } from './pages/Dashboard';
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <>
-      <Navbar />
+      {location.pathname !== '/auth' && <Navbar />}
       <Switch>
         <Route path='/' exact>
           <Dashboard />
