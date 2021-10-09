@@ -55,3 +55,9 @@ exports.loginUser = async (req, res) => {
   logger(200, 'User logged in', isUserExist, JSON.stringify(req.user));
   res.json({ error: null, data: { userId: isUserExist._id, authToken: token, user: isUserExist } });
 }
+
+exports.getCurrentUser = async (req, res) => {
+  const user = await User.findById(req.user.userId);
+  logger(200, 'User found', user, JSON.stringify(req.user));
+  res.json({ error: null, data: { userId: user._id, user: user } });
+}
