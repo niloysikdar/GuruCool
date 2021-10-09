@@ -100,3 +100,24 @@ exports.getAllClassrooms = async (req, res) => {
     return res.status(500).send(respMessage(false, {}, err));
   }
 };
+
+exports.getLeaderboard = async (req, res) => {
+  try {
+    const classroom = await Classroom.findById(req.query.id);
+    const students = classroom.students;
+    const studentsData = [];
+    for (let i = 0; i < students.length; i++) {
+      const user = await User.findById(students[i].userId);
+      user.password = null;
+      //console.log(user)
+      studentsData.push({ ...user._doc, points: students[i].score, level: students[i].level });
+
+    };
+    console.log(studentsData)
+    studentsData.sort((a, b) => b.points - a.points);
+    const leaderboard = studentsData;
+    return res.status(200).send(respMessage(true, { leaderboard }, null));
+  } catch (err) {
+    return res.status(500).send(respMessage(false, {}, err));
+  }
+}
