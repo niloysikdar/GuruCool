@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { getClassData } from '../../api';
+import { getClassData, getLeaderboard } from '../../api';
+import { LeaderBoard } from '../../components/LeaderBoard';
 import styles from './classroompage.module.scss';
 
 const ClassRoom = () => {
@@ -10,9 +11,13 @@ const ClassRoom = () => {
   const currentFullName = JSON.parse(localStorage.getItem('userdata')).user
     .fullname;
   const [classData, setClassData] = useState({});
+  const [leaderboardData, setleaderBoardData] = useState([]);
 
   useEffect(() => {
     getClassData(classId).then((data) => setClassData(data.data.data));
+    getLeaderboard(classId).then((data) =>
+      setleaderBoardData(data.data.data.leaderboard)
+    );
   }, [classId]);
 
   return (
@@ -27,10 +32,10 @@ const ClassRoom = () => {
       ) : (
         <button>Join Now</button>
       )}
-
-      <br />
-      <br />
-      {JSON.stringify(classData)}
+      <div className={styles.leaderboard}>
+        <h3>Leaderboard:</h3>
+        <LeaderBoard leaderboardData={leaderboardData} />
+      </div>
     </div>
   );
 };
