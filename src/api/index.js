@@ -18,3 +18,6 @@ export const signup = (formData) => API.post('/auth/register', formData);
 
 export const getALlClass = () => API.get('/classroom/getAll');
 export const createClass = (data) => API.post('/classroom/create', data);
+
+export const getClassData = (classId) =>
+  API.get(`/classroom/get?id=${classId}`);
