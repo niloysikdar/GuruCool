@@ -1,13 +1,13 @@
 import { Switch, Route } from 'react-router-dom';
 
-import { Login } from './pages/Login';
+import { Auth } from './pages/Auth';
 import { Home } from './pages/Home';
 
 const App = () => {
   return (
     <Switch>
       <Route path='/login'>
-        <Login />
+        <Auth />
       </Route>
       <Route path='/' exact>
         <Home />

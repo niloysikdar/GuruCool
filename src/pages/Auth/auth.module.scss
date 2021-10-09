@@ -22,7 +22,8 @@
     }
 
     .form {
-      width: 300px;
+      width: 320px;
+      height: 75%;
       padding: 40px 30px;
       display: flex;
       flex-direction: column;
@@ -34,6 +35,7 @@
         width: fit-content;
         background-color: #def1ef;
         border-radius: 30px;
+        margin-bottom: 3rem;
 
         button {
           padding: 9px 20px;
@@ -48,6 +50,22 @@
         .selected {
           background-color: $buttonbackground;
           color: #fff;
+        }
+      }
+
+      form {
+        button {
+          margin-top: 2rem;
+          width: 100%;
+          padding: 9px 20px;
+          outline: none;
+          border: none;
+          border-radius: $borderRadius;
+          background-color: $buttonbackground;
+          color: #fff;
+          cursor: pointer;
+          font-size: 1.1rem;
+          font-weight: 500;
         }
       }
     }
