@@ -1,0 +1,23 @@
+.dashboard {
+  padding: 5rem;
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .cards {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3.5rem;
+    column-gap: 2.5rem;
+  }
+}
