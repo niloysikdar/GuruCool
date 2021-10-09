@@ -29,7 +29,7 @@ exports.getClassroomById = async (req, res) => {
 }
 exports.joinClassroom = async (req, res) => {
   try {
-    Classroom.findByIdAndUpdate(req.query.id, { $push: { students: req.user.userId } }, (err, classroom) => {
+    Classroom.findByIdAndUpdate(req.query.id, { $push: { students: { userId: req.user.userId, score: 0, level: 0 } } }, (err, classroom) => {
       if (err) {
         return res.status(500).send(respMessage(false, {}, err));
       }

@@ -11,3 +11,7 @@ Sat Oct 09 2021 20:20:05 GMT+0530 (India Standard Time):
 Status Code 400, User not found, DataID: undefined, By User: undefined
 Sat Oct 09 2021 20:20:25 GMT+0530 (India Standard Time):
 Status Code 400, User not found, DataID: undefined, By User: undefined
+Sat Oct 09 2021 22:05:24 GMT+0530 (India Standard Time):
+Status Code 200, User logged in, DataID: 616189558cb70e531bb45706, By User: "test@gmail.com"
+Sat Oct 09 2021 22:06:12 GMT+0530 (India Standard Time):
+Status Code 200, User found, DataID: 616189558cb70e531bb45706, By User: "616189558cb70e531bb45706"
