@@ -1,0 +1,34 @@
+.dashboard {
+  padding: 5rem;
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .cards {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3.5rem;
+    column-gap: 2.5rem;
+  }
+}
