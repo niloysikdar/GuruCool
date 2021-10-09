@@ -1,3 +1,4 @@
+const Classroom = require('../models/Classroom');
 const Quiz = require('../models/Quiz');
 const User = require('../models/User');
 const respMessage = require('../utils/respMessage');
@@ -68,6 +69,16 @@ exports.submitQuiz = async (req, res) => {
       var level = Math.floor((user.points + score) / 100);
       await User.findByIdAndUpdate(user._id, { points: (user.points + score), level: level });
       await Quiz.findByIdAndUpdate(req.query.id, { $push: { submissions: result } });
+      const classroom = await Classroom.findById(quiz.classroom);
+      for (let i = 0; i < classroom.students.length; i++) {
+        if (classroom.students[i].userId === user._id) {
+          classroom.students[i].score += score;
+          classroom.students[i].level = Math.floor(classroom.students[i].points / 100);
+          break;
+        }
+      }
+      console.log(classroom.students)
+      await Classroom.findByIdAndUpdate(req.query.classroomId, { students: classroom.students });
       res.status(200).send(respMessage(true, { result }, 'Quiz submitted successfully'));
     } else {
       res.status(403).send(respMessage(false, {}, 'Only students can submit quiz'));
