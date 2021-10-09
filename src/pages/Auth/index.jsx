@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { login, signUp } from '../../actions/auth';
 
 import { LoginForm } from '../../components/LoginForm';
 import { SignUpForm } from '../../components/SignUpForm';
 import styles from './auth.module.scss';
-
 import image from '../../assets/intro.svg';
 
 const Auth = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   const [isLogin, setIsLogin] = useState(true);
   const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [signUpData, setSignUpData] = useState({
@@ -16,6 +22,13 @@ const Auth = () => {
     role: 'Student',
     rollNo: '',
   });
+
+  useEffect(() => {
+    const userdata = localStorage.getItem('userdata');
+    if (userdata) {
+      history.replace('/');
+    }
+  }, [history]);
 
   const onLoginChangeHandler = (e) => {
     setLoginData({ ...loginData, [e.target.id]: e.target.value });
@@ -27,8 +40,9 @@ const Auth = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(loginData);
-    console.log(signUpData);
+    isLogin
+      ? dispatch(login(loginData, history))
+      : dispatch(signUp(signUpData, history));
   };
 
   return (
