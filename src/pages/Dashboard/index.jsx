@@ -1,4 +1,4 @@
-const Home = () => {
+const Dashboard = () => {
   return (
     <div>
       <h2>This is Home Screen</h2>
@@ -6,4 +6,4 @@ const Home = () => {
   );
 };
 
-export { Home };
+export { Dashboard };
