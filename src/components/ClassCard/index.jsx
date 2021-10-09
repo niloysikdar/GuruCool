@@ -1,15 +1,12 @@
 import styles from './classcard.module.scss';
 
-const ClassCard = () => {
+const ClassCard = ({ classData }) => {
   return (
     <div className={styles.card}>
-      <h2>CSE SEM 5</h2>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, veniam
-        qui. Facilis laudantium ipsam commodi labore. Esse maxime debitis nam
-        dolorum fuga, sunt qui, nemo vero aut doloremque commodi! A.
-      </p>
-      <h3>Created By: Dipak Kumar Kole</h3>
+      <h2>{classData.name}</h2>
+      <p>{classData.description}</p>
+      <h3>Created By: {classData.fullname}</h3>
+      <h3>Created On: {classData.createdAt.split('T')[0]}</h3>
       <button>View Class</button>
     </div>
   );

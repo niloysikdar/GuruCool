@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 import { useModal } from '../../hooks/useModal';
 import { ClassCard } from '../../components/ClassCard';
 import { AddClass } from '../../components/AddClass';
@@ -7,7 +9,7 @@ const Dashboard = () => {
   const NAME = JSON.parse(localStorage.getItem('userdata')).user.fullname;
   const { isModalOpen, open, close } = useModal();
 
-  const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const allClasses = useSelector((state) => state.classReducer);
 
   return (
     <>
@@ -21,8 +23,8 @@ const Dashboard = () => {
           <button onClick={open}>Create New Class</button>
         </div>
         <div className={styles.cards}>
-          {nums.map((item) => (
-            <ClassCard key={item} />
+          {allClasses.map((classData) => (
+            <ClassCard key={classData.name} classData={classData} />
           ))}
         </div>
       </div>
