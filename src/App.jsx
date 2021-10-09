@@ -1,18 +1,22 @@
 import { Switch, Route } from 'react-router-dom';
 
+import { Navbar } from './components/Navbar';
 import { Auth } from './pages/Auth';
-import { Home } from './pages/Home';
+import { Dashboard } from './pages/Dashboard';
 
 const App = () => {
   return (
-    <Switch>
-      <Route path='/' exact>
-        <Home />
-      </Route>
-      <Route path='/auth'>
-        <Auth />
-      </Route>
-    </Switch>
+    <>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact>
+          <Dashboard />
+        </Route>
+        <Route path='/auth'>
+          <Auth />
+        </Route>
+      </Switch>
+    </>
   );
 };
 
