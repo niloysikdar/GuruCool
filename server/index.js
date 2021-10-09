@@ -1,18 +1,37 @@
-const express = require('express');
-const cors = require('cors');
-
-const dotenv = require('dotenv');
-dotenv.config();
-
-const PORT = process.env.PORT || 5000;
-
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const userRouter = require("./routers/userRouter");
+require('dotenv').config()
 const app = express();
-app.use(express.urlencoded({ limit: '25mb', extended: true }));
-app.use(express.json({ limit: '25mb' }));
+
+
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
+// parse requests of content-type - application/json
+app.use(express.json());
+app.use('/auth', userRouter);
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "HackX api." });
 });
 
-app.listen(PORT, () => console.log(`Server is running on Port: ${PORT}`));
+// set port, listen for requests
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, async () => {
+  await mongoose
+    .connect(process.env.DB, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
+    .then(() => {
+      console.log("Successfully connect to MongoDB.");
+    })
+    .catch(err => {
+      console.error("Connection error", err);
+      process.exit();
+    });
+
+  console.log(`Server is running on port ${PORT}.`);
+});
