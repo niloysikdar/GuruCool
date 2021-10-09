@@ -30,7 +30,7 @@ exports.createUser = async (req, res) => {
     const savedUser = await user.save();
     const token = jwt.sign({ userId: savedUser._id }, process.env.JWT_SECRET, { expiresIn: '1d' },);
     logger(200, 'User created', savedUser, JSON.stringify(req.user));
-    res.json({ error: null, data: { userId: savedUser._id, authToken: token } });
+    res.json({ error: null, data: { userId: savedUser._id, authToken: token, user: savedUser } });
   } catch (error) {
     logger(400, 'User not created', error, JSON.stringify(req.user));
     res.status(400).json({ error });
@@ -53,5 +53,5 @@ exports.loginUser = async (req, res) => {
   }
   const token = jwt.sign({ userId: isUserExist._id }, process.env.JWT_SECRET, { expiresIn: '1d' },);
   logger(200, 'User logged in', isUserExist, JSON.stringify(req.user));
-  res.json({ error: null, data: { userId: isUserExist._id, authToken: token } });
+  res.json({ error: null, data: { userId: isUserExist._id, authToken: token, user: isUserExist } });
 }
