@@ -5,6 +5,9 @@ const classReducer = (allClasses = [], action) => {
     case actionTypes.CREATE_CLASS:
       return [...allClasses, action.payload];
 
+    case actionTypes.GET_ALL_CLASSES:
+      return action.payload;
+
     default:
       return allClasses;
   }
