@@ -4,11 +4,18 @@ const respMessage = require('../utils/respMessage');
 
 exports.createClassroom = async (req, res) => {
   try {
-    Classroom.create({ ...req.body, createdBy: req.user.userId }, (err, classroom) => {
+    Classroom.create({ ...req.body, createdBy: req.user.userId }, async (err, classroom) => {
       if (err) {
         return res.status(500).send(respMessage(false, {}, err));
       }
-      return res.status(201).send(respMessage(true, { classroom }, null));
+      await User.findByIdAndUpdate(req.user.userId, { $push: { classrooms: classroom._id } }, (err, user) => {
+        if (err) {
+          return res.status(500).send(respMessage(false, {}, err));
+        }
+        const fullname = user.fullname;
+        //console.log(name)
+        return res.status(201).send(respMessage(true, { ...classroom._doc, fullname }, null));
+      });
     });
   } catch (err) {
     return res.status(500).send(respMessage(false, {}, err));
@@ -17,11 +24,14 @@ exports.createClassroom = async (req, res) => {
 
 exports.getClassroomById = async (req, res) => {
   try {
-    Classroom.findById(req.query.id, (err, classroom) => {
+    Classroom.findById(req.query.id, async (err, classroom) => {
       if (err) {
         return res.status(500).send(respMessage(false, {}, err));
       }
-      return res.status(200).send(respMessage(true, { classroom }, null));
+      const user = await User.findById(classroom.createdBy);
+      const fullname = user.fullname;
+      //console.log(user)
+      return res.status(200).send(respMessage(true, { ...classroom._doc, fullname }, null));
     });
   } catch (err) {
     return res.status(500).send(respMessage(false, {}, err));
