@@ -18,14 +18,10 @@ export const signup = (formData) => API.post('/auth/register', formData);
 
 export const getALlClass = () => API.get('/classroom/getAll');
 export const createClass = (data) => API.post('/classroom/create', data);
+export const joinClass = (classId) => API.put(`/classroom/join?id=${classId}`);
 
 export const getClassData = (classId) =>
   API.get(`/classroom/get?id=${classId}`);
 
-// export const getLeaderboard = (classId) =>
-//   API.get(`/classroom/getLeaderboard?id=${classId}`);
-
 export const getLeaderboard = (classId) =>
-  API.get(
-    'http://localhost:8000/classroom/getLeaderboard?id=6161a0c9487b8d707195bd65'
-  );
+  API.get(`/classroom/getLeaderboard?id=${classId}`);

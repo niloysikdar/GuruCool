@@ -1,6 +1,6 @@
 import styles from './leaderboard.module.scss';
 
-const Labels = ['Name', 'Roll No.', 'Role', 'Level', 'Points'];
+const Labels = ['Name', 'Roll No.', 'Level', 'Points'];
 
 const LeaderBoard = ({ leaderboardData }) => {
   return (
@@ -18,7 +18,6 @@ const LeaderBoard = ({ leaderboardData }) => {
             <tr key={data._id}>
               <td>{data.fullname}</td>
               <td>{data.rollNo}</td>
-              <td>{data.role}</td>
               <td>{data.level}</td>
               <td>{data.points}</td>
             </tr>
