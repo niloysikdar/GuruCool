@@ -73,4 +73,30 @@ exports.joinClassroom = async (req, res) => {
   } catch (err) {
     return res.status(500).send(respMessage(false, {}, err));
   }
+}
+
+exports.getAllClassrooms = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.userId);
+    if (user.role === 'Teacher') {
+      Classroom.find({ createdBy: req.user.userId }, async (err, classrooms) => {
+        if (err) {
+          return res.status(500).send(respMessage(false, {}, err));
+        }
+        const fullname = user.fullname;
+        //console.log(name)
+        return res.status(200).send(respMessage(true, { classrooms, fullname }, null));
+      });
+    } else {
+      var classrooms = [];
+      user.classrooms.forEach(async (classroom) => {
+        const classroomData = await Classroom.findById(classroom);
+        const createdBy = await User.findById(classroomData.createdBy);
+        classrooms.push({ ...classroomData._doc, createdBy: createdBy.fullname });
+      });
+      return res.status(200).send(respMessage(true, { classrooms }, null));
+    }
+  } catch (err) {
+    return res.status(500).send(respMessage(false, {}, err));
+  }
 };
