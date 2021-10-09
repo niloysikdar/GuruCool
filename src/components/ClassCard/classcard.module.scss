@@ -20,11 +20,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
 
   h3 {
+    margin: 5px 0;
     font-size: 1rem;
     font-weight: 500;
     overflow: hidden;
@@ -35,7 +36,7 @@
   }
 
   button {
-    margin: 25px 0 10px 0;
+    margin: 20px 0 10px 0;
     width: 100%;
     padding: 10px;
     font-size: 1.1rem;
