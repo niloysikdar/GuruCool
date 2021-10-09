@@ -1,8 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+
 const userRouter = require("./routers/userRouter");
 const classroomRouter = require("./routers/classroomRouter");
+const quizRouter = require("./routers/quizRouter");
+
 require('dotenv').config()
 const app = express();
 
@@ -13,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/auth', userRouter);
 app.use('/classroom', classroomRouter);
+app.use('/quiz', quizRouter);
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "HackX api." });
