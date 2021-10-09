@@ -15,4 +15,4 @@ API.interceptors.request.use((req) => {
 
 export const login = (formData) => API.post('/auth/login', formData);
 
-export const signup = (formData) => API.post('/auth/signup', formData);
+export const signup = (formData) => API.post('/auth/register', formData);
