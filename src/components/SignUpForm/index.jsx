@@ -25,7 +25,7 @@ const SignUpForm = ({ signUpData, onChange }) => {
         placeholder='Password'
         onChange={onChange}
       />
-      <div style={{ margin: '12px 0' }}>
+      <div style={{ margin: '8px 0' }}>
         <label className={styles.select} htmlFor='role'>
           Choose a Role:
         </label>
@@ -40,6 +40,15 @@ const SignUpForm = ({ signUpData, onChange }) => {
           <option value='Teacher'>Teacher</option>
         </select>
       </div>
+      {signUpData.role === 'Student' && (
+        <InputField
+          type='text'
+          id='rollNo'
+          value={signUpData.rollNo}
+          placeholder='Roll No'
+          onChange={onChange}
+        />
+      )}
     </div>
   );
 };

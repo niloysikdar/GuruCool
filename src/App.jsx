@@ -6,11 +6,11 @@ import { Home } from './pages/Home';
 const App = () => {
   return (
     <Switch>
-      <Route path='/login'>
-        <Auth />
-      </Route>
       <Route path='/' exact>
         <Home />
+      </Route>
+      <Route path='/login'>
+        <Auth />
       </Route>
     </Switch>
   );

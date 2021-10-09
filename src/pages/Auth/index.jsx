@@ -14,6 +14,7 @@ const Auth = () => {
     email: '',
     password: '',
     role: 'Student',
+    rollNo: '',
   });
 
   const onLoginChangeHandler = (e) => {
