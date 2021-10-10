@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { getQuizQuestions, submitQuiz } from '../../api';
 import styles from './quiz.module.scss';
+import swal from 'sweetalert';
 
 const Quiz = () => {
+  const history = useHistory();
   const [questions, setQuestions] = useState([]);
   const [answer1, setAnswer1] = useState(0);
   const [answer2, setAnswer2] = useState(0);
@@ -34,6 +37,10 @@ const Quiz = () => {
     const answerData = { answers: answers };
     submitQuiz(answerData).then((res) => {
       console.log(res.data);
+      swal('Quiz has been submitted successfully', {
+        icon: 'success',
+      });
+      history.replace('/profile');
     });
   };
 
