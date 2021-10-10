@@ -1,0 +1,39 @@
+.profile {
+  padding: 5rem;
+  padding-top: 120px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .text {
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin: 3px 0;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    h4 {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      letter-spacing: 0.3px;
+    }
+  }
+}

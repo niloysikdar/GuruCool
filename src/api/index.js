@@ -16,6 +16,8 @@ API.interceptors.request.use((req) => {
 export const login = (formData) => API.post('/auth/login', formData);
 export const signup = (formData) => API.post('/auth/register', formData);
 
+export const getCurrentUser = () => API.get('/auth/currentUser');
+
 export const getALlClass = () => API.get('/classroom/getAll');
 export const createClass = (data) => API.post('/classroom/create', data);
 export const joinClass = (classId) => API.put(`/classroom/join?id=${classId}`);

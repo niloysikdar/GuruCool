@@ -39,7 +39,13 @@ const Navbar = () => {
         Home
       </Link>
       <div>
-        <button>Profile</button>
+        <Link
+          to='/profile'
+          className={styles.button}
+          style={{ textDecoration: 'none' }}
+        >
+          Profile
+        </Link>
         <button onClick={logout}>Sign Out</button>
       </div>
     </div>
