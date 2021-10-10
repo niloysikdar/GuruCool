@@ -47,14 +47,14 @@ Getting inspired after investigating the problems faced by our own professors, w
 ## SCREENSHOTS 👀
 
 <p align="center">
-<img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(150).png" height="250">
-<img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(151).png" height="250">
-  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(152).png" height="250">
-  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(153).png" height="250">
-  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(154).png" height="250">
-  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(155).png" height="250">
-  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(156).png" height="250">
-  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(157).png" height="250">
+<img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(150).png" height="220">
+<img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(151).png" height="220">
+  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(152).png" height="220">
+  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(153).png" height="220">
+  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(154).png" height="220">
+  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(155).png" height="220">
+  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(156).png" height="220">
+  <img src="https://github.com/niloysikdar/HackX/blob/main/images/Screenshot%20(157).png" height="220">
   
 </p>
 
@@ -69,3 +69,7 @@ Getting inspired after investigating the problems faced by our own professors, w
 * Sahil Saha
 * Anubhab Sarkar
 * Shibam Naskar
+
+<p align="center">
+<img src="https://i.imgur.com/bfDBQy1.jpeg" height="250">
+  </p>
