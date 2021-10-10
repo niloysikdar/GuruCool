@@ -1,0 +1,65 @@
+// .navbar {
+//   width: 100%;
+//   height: 6vh;
+//   background-color: #202124;
+//   display: flex;
+//   align-items: space-between;
+//   justify-content: space-between;
+// }
+// .navigation_button {
+//   color: rgb(245, 245, 245);
+// }
+// .navFront {
+//   display: flex;
+// }
+// .navbar img {
+//   border-radius: 50%;
+//   height: 4vh;
+//   margin-top: 4px;
+//   margin-left: 10px;
+// }
+.teacherName {
+  color: rgb(245, 245, 245);
+  margin-left: 10px;
+  margin-top: 9px;
+}
+.Main {
+  padding: 20px;
+  padding-top: 100px;
+  background-color: rgb(245, 245, 245);
+}
+
+// .body {
+//   background-color: #62696e;
+//   height: 87vh;
+// }
+
+.meeting-footer {
+  background: #202124;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.meeting-icons {
+  color: white;
+  border-radius: 50%;
+  background: #3c4043;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #ea4335;
+}
+
+div[disabled] {
+  pointer-events: none;
+  opacity: 0.3;
+}

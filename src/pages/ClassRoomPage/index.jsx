@@ -57,7 +57,7 @@ const ClassRoom = () => {
           Take Quiz
         </Link>
         <Link
-          to='/meeting'
+          to='/meet'
           className={styles.button}
           style={{ textDecoration: 'none' }}
         >
