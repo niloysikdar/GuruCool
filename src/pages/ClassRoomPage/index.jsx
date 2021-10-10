@@ -64,7 +64,7 @@ const ClassRoom = () => {
           Join Meeting
         </Link>
         <a
-          href='https://www.google.com/'
+          href={`https://wbo.ophir.dev/boards/${classId}`}
           target='_blank'
           rel='noreferrer'
           className={styles.button}
