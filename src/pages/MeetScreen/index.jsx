@@ -194,6 +194,9 @@ const MeetScreen = () => {
           <FontAwesomeIcon icon={faDesktop} />
         </div>
       </div>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <button className='export-button'>Export Attendance</button>
+      </div>
     </div>
   );
 };
