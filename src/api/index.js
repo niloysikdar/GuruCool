@@ -25,3 +25,9 @@ export const getClassData = (classId) =>
 
 export const getLeaderboard = (classId) =>
   API.get(`/classroom/getLeaderboard?id=${classId}`);
+
+export const getQuizQuestions = () =>
+  API.get('/quiz/getAll?id=616205c6712ad9854a207e85');
+
+export const submitQuiz = (answerData) =>
+  API.post('/quiz/submit?id=616207a44e7fb0574c492151', answerData);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory, Link } from 'react-router-dom';
 
 import { getClassData, getLeaderboard, joinClass } from '../../api';
 import { LeaderBoard } from '../../components/LeaderBoard';
@@ -42,12 +42,21 @@ const ClassRoom = () => {
       <p>{classData.description}</p>
       <h3>Created By: {classData.fullname}</h3>
       <h3>Created On: {classData.createdAt?.split('T')[0]}</h3>
-      {checkIncludes(classData.students, currentUserId) ||
-      classData.fullname === currentFullName ? (
-        <button>Already Joined</button>
-      ) : (
-        <button onClick={handleJoinClass}>Join Now</button>
-      )}
+      <div>
+        {checkIncludes(classData.students, currentUserId) ||
+        classData.fullname === currentFullName ? (
+          <button>Already Joined</button>
+        ) : (
+          <button onClick={handleJoinClass}>Join Now</button>
+        )}
+        <Link
+          to='/quiz'
+          className={styles.button}
+          style={{ textDecoration: 'none' }}
+        >
+          Take Quiz
+        </Link>
+      </div>
       <div className={styles.leaderboard}>
         <h3>Leaderboard:</h3>
         <LeaderBoard leaderboardData={leaderboardData} />
