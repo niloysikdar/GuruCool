@@ -1,0 +1,75 @@
+@import '../../ui/colors';
+
+.teacherName {
+  color: rgb(245, 245, 245);
+  margin-left: 10px;
+  margin-top: 9px;
+}
+.Main {
+  padding: 20px;
+  padding-top: 100px;
+  background-color: rgb(245, 245, 245);
+}
+
+// .body {
+//   background-color: #62696e;
+//   height: 87vh;
+// }
+
+.meeting-footer {
+  background: #202124;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.meeting-icons {
+  color: white;
+  border-radius: 50%;
+  background: #3c4043;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #ea4335;
+}
+
+div[disabled] {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.export-button {
+  margin-top: 1.5rem;
+  padding: 7px 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  // background-color: $buttonbackground;
+  background-image: linear-gradient(
+    to right,
+    #02a1a7 0%,
+    #00cdac 51%,
+    $buttonbackground 100%
+  );
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+
+  &:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+}

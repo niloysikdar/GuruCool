@@ -6,6 +6,7 @@ import { Dashboard } from './pages/Dashboard';
 import { ClassRoom } from './pages/ClassRoomPage';
 import { Quiz } from './pages/Quiz';
 import { Profile } from './pages/Profile';
+import { MeetScreen } from './pages/MeetScreen';
 
 const App = () => {
   const location = useLocation();
@@ -28,6 +29,9 @@ const App = () => {
         </Route>
         <Route path='/profile'>
           <Profile />
+        </Route>
+        <Route path='/meet'>
+          <MeetScreen />
         </Route>
       </Switch>
     </>
