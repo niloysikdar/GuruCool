@@ -21,6 +21,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
+import swal from 'sweetalert';
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -102,6 +104,8 @@ const MeetScreen = () => {
   const MicToggle = () => {
     setmic(!mic);
   };
+
+  const ROLE = JSON.parse(localStorage.getItem('userdata')).user.role;
 
   return (
     <div className='Main'>
@@ -194,9 +198,22 @@ const MeetScreen = () => {
           <FontAwesomeIcon icon={faDesktop} />
         </div>
       </div>
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <button className='export-button'>Export Attendance</button>
-      </div>
+      {ROLE === 'Teacher' && (
+        <div
+          style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+        >
+          <button
+            className='export-button'
+            onClick={() =>
+              swal('Attendance has been exported successfully', {
+                icon: 'success',
+              })
+            }
+          >
+            Export Attendance
+          </button>
+        </div>
+      )}
     </div>
   );
 };
