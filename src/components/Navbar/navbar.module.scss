@@ -8,11 +8,12 @@
   background-color: #f8fafb;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
-  justify-content: flex-end;
-  padding-right: 15px;
+  justify-content: space-between;
+  padding: 0 15px;
   z-index: 100;
 
-  button {
+  button,
+  .button {
     margin: 12px 15px;
     padding: 7px 20px;
     outline: none;

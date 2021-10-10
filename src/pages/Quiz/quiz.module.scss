@@ -1,0 +1,90 @@
+@import '../../ui/colors';
+
+.quiz {
+  padding: 5rem;
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #f1fffe,
+    #ccfffa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .questions {
+    margin: 2rem 0 3rem 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5rem;
+
+    .card {
+      width: 350px;
+      padding: 15px 20px;
+      background-color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      .options {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .button,
+        .buttonactive {
+          padding: 7px 15px;
+          border-radius: 5px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          cursor: pointer;
+        }
+
+        .buttonactive {
+          background-color: grey;
+          color: #fff;
+        }
+      }
+    }
+  }
+  button {
+    margin-top: 2rem;
+    padding: 7px 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    // background-color: $buttonbackground;
+    background-image: linear-gradient(
+      to right,
+      #02a1a7 0%,
+      #00cdac 51%,
+      $buttonbackground 100%
+    );
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

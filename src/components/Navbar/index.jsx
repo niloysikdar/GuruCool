@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
@@ -35,8 +35,19 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <button>Profile</button>
-      <button onClick={logout}>Sign Out</button>
+      <Link to='/' className={styles.button} style={{ textDecoration: 'none' }}>
+        Home
+      </Link>
+      <div>
+        <Link
+          to='/profile'
+          className={styles.button}
+          style={{ textDecoration: 'none' }}
+        >
+          Profile
+        </Link>
+        <button onClick={logout}>Sign Out</button>
+      </div>
     </div>
   );
 };
