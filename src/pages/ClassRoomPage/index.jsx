@@ -56,6 +56,22 @@ const ClassRoom = () => {
         >
           Take Quiz
         </Link>
+        <Link
+          to='/meeting'
+          className={styles.button}
+          style={{ textDecoration: 'none' }}
+        >
+          Join Meeting
+        </Link>
+        <a
+          href='https://www.google.com/'
+          target='_blank'
+          rel='noreferrer'
+          className={styles.button}
+          style={{ textDecoration: 'none' }}
+        >
+          Join Whiteboard
+        </a>
       </div>
       <div className={styles.leaderboard}>
         <h3>Leaderboard:</h3>
