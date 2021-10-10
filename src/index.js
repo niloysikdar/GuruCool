@@ -8,6 +8,8 @@ import reducers from './reducers';
 import { App } from './App';
 import './index.scss';
 
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
@@ -18,3 +20,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+serviceWorkerRegistration.register();
