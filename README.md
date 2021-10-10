@@ -4,7 +4,6 @@
  </p>
 <p align="center">
 <img src="https://forthebadge.com/images/badges/built-with-love.svg">
-<img src="https://forthebadge.com/images/badges/built-for-android.svg">
 <img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg">  
 </p>
 
