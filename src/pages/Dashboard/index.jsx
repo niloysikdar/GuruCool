@@ -10,13 +10,16 @@ import styles from './dashboard.module.scss';
 const Dashboard = () => {
   const dispatch = useDispatch();
 
-  const NAME = JSON.parse(localStorage.getItem('userdata')).user.fullname;
-  const ROLE = JSON.parse(localStorage.getItem('userdata')).user.role;
+  const NAME = JSON.parse(localStorage.getItem('userdata'))?.user.fullname;
+  const ROLE = JSON.parse(localStorage.getItem('userdata'))?.user.role;
   const { isModalOpen, open, close } = useModal();
 
   useEffect(() => {
+    if (NAME === undefined || NAME === null) {
+      window.location = '/auth';
+    }
     dispatch(getAllClasses());
-  }, [dispatch]);
+  }, [dispatch, NAME]);
 
   const allClasses = useSelector((state) => state.classReducer);
 
